@@ -25,8 +25,8 @@
           <h1>SaltGUI</h1>
           <div class='notice-wrapper'>
           </div>
-          <input id='username' type='text' placeholder='Username' />
-          <input id='password' type='password' placeholder='Password' />
+          <input name='username' id='username' type='text' placeholder='Username' />
+          <input name='password' id='password' type='password' placeholder='Password' />
           <select id='eauth'>
             <!-- see https://docs.saltstack.com/en/latest/ref/auth/all/index.html -->
             <option id='eauth_default' value="default">Type</option>
@@ -46,7 +46,7 @@
             <!-- these can be added after testing to optgroup 'other' -->
             <!-- or to (new) optgroup 'experimental' on explicit user request -->
           </select>
-          <input type='submit' value='Login'/>
+          <input type='submit' name='Login' value='Login'/>
           <div class='attribution'>
             <img src='static/images/github.png' />SaltGUI v1.1.0
           </div>
