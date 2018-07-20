@@ -3,3 +3,7 @@ node_js:
  - "node"
 before_script:
   - cd $TRAVIS_BUILD_DIR
+script:
+  - yarn lint
+  # - yarn wait-for-docker
+  # - yarn test
