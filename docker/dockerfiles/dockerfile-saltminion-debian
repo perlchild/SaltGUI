@@ -1,7 +1,7 @@
-FROM debian
+FROM debian:9
 MAINTAINER Martijn Jacobs <martijn@devopsconsulting.nl>
 
-ENV REFRESHED_ON "7 Mar 2018"
+ENV REFRESHED_ON "23 Jul 2018"
 ENV DEBIAN_FRONTEND noninteractive
 
 # some handy stuff to have
@@ -16,3 +16,6 @@ RUN apt-get update && apt-get install salt-minion --yes
 
 # copy the minion configuration
 ADD ./conf/minion /etc/salt/minion
+
+# show which versions are installed
+RUN dpkg -l | grep salt\-
