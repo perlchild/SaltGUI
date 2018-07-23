@@ -6,7 +6,4 @@ services:
 before_script:
   - cd $TRAVIS_BUILD_DIR
 script:
-  - yarn lint
-  - docker-compose -f docker/docker-compose.yml up -d
-  - yarn wait-for-docker
-  - yarn test
+  - ./runtests.sh
