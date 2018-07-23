@@ -39,7 +39,7 @@ describe('login page', function() {
       browser.assert.text('header h1', 'SaltGUI');
     });
 
-    it('and a logout buttonis shown', function() {
+    it('and a logout button is shown', function() {
       browser.assert.element('header #button_logout');
     });
 
