@@ -4,7 +4,7 @@ These docker images are build with Ubuntu 18.04 (bionic) and Debian 9 (stretch).
 - https://repo.saltstack.com/apt/debian/9/amd64/latest
 - http://repo.saltstack.com/py3/ubuntu/18.04/amd64/latest
 
-Version of all salt  packages installed: *2018.3.2+ds-1*
+Version of all salt packages installed: *2018.3.2+ds-1*
 
 Docker images
 -------------
