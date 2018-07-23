@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -e
+# add testing packages
+yarn
+
 # first see if we write es6 compatible js
 yarn lint
 
@@ -13,4 +17,6 @@ yarn wait-for-docker
 yarn test
 
 # cleanup the docker images for 100% reproducable testresults
- docker-compose -f docker/docker-compose.yml rm -f -s
+docker-compose -f docker/docker-compose.yml rm -f -s
+
+set +e
