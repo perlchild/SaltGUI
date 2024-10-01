@@ -8,6 +8,10 @@ pillar_roots:
   base:
     - /srv/pillar
 
+ext_pillar:
+  - git:
+  - data https://erobibaro@bitbucket.org/tapeng/salt-data.git
+
 external_auth:
   pam:
     salt:
