@@ -6,10 +6,11 @@ The version tagged `release` is the latest released version. The version `master
 
 See [SaltGUI documentation](https://erwindon.github.io/SaltGUI/) for the complete documentation.
 
-IMPORTANT: since Salt version 3006, it is needed to add configuration option `netapi_enable_clients` to allow salt-api - and thus SaltGUI - to work. See also [netapi-enable-clients.html](https://docs.saltproject.io/en/3006.0/topics/netapi/netapi-enable-clients.html#netapi-enable-clients). Additionally, any Python
+IMPORTANT: since Salt version 3006, it is needed to add the configuration option `netapi_enable_clients` to allow salt-api - and thus SaltGUI - to work. See also [netapi-enable-clients.html](https://docs.saltproject.io/en/3006.0/topics/netapi/netapi-enable-clients.html#netapi-enable-clients). Additionally, any Python
 packages that the SaltStack installation also depends on, must be installed with `salt-pip`. This includes authentication plugins
 such as `yubico_client`, or execution modules such as `boto3_sns`.
 
+[![CodeQL](https://github.com/erwindon/SaltGUI/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/erwindon/SaltGUI/actions/workflows/codeql-analysis.yml)
 
 ## Screenshots
 ![overview](screenshots/overview.png)
@@ -44,7 +45,7 @@ such as `yubico_client`, or execution modules such as `boto3_sns`.
 
 
 ## Quick start using PAM as authentication method
-- Install `salt-api` - this is available in the Salt PPA package which should already been installed if you're using Salt
+- Install `salt-api` - this is available in the Salt repo which should already be known if you're using Salt
 - Open the master config /etc/salt/master
 - Find `external_auth` and configure as following (see the note below!):
 

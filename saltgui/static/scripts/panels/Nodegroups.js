@@ -77,7 +77,6 @@ export class NodegroupsPanel extends Panel {
     // force same columns on all rows
     minionTr.appendChild(Utils.createTd("saltversion"));
     minionTr.appendChild(Utils.createTd("os"));
-    minionTr.appendChild(Utils.createTd("run-command-button"));
 
     minionTr.offline = true;
   }
@@ -149,7 +148,7 @@ export class NodegroupsPanel extends Panel {
         oldMenuButton.parentElement.remove();
         const newMenuButton = Utils.createTd();
         minionTr2.insertBefore(newMenuButton, minionTr2.firstChild);
-        minionTr2.dropdownmenu = new DropDownMenu(newMenuButton, true);
+        minionTr2.dropdownmenu = new DropDownMenu(newMenuButton, "smaller");
         if (minionIsOk) {
           this._addMenuItemStateApplyMinion(minionTr2.dropdownmenu, pMinionId);
           this._addMenuItemStateApplyTestMinion(minionTr2.dropdownmenu, pMinionId);
@@ -157,8 +156,6 @@ export class NodegroupsPanel extends Panel {
           this._addMenuItemShowPillars(minionTr2.dropdownmenu, pMinionId);
           this._addMenuItemShowSchedules(minionTr2.dropdownmenu, pMinionId);
           this._addMenuItemShowBeacons(minionTr2.dropdownmenu, pMinionId);
-        } else {
-          this._addMenuItemShowKeys(minionTr2.dropdownmenu);
         }
       }
 
@@ -237,7 +234,7 @@ export class NodegroupsPanel extends Panel {
     this.setPlayPauseButton("none");
     this.todoNodegroups = null;
 
-    const titleElement = this.table.querySelector("#ng-" + null + " td");
+    const titleElement = this.table.querySelectorAll("#ng-" + null + " td")[1];
     const cnt = this.table.rows.length - titleElement.parentElement.rowIndex - 1;
 
     if (cnt === 0) {
@@ -273,7 +270,7 @@ export class NodegroupsPanel extends Panel {
     // user can decide
     // system can decide to remove the play/pause button
     if (this.playOrPause !== "play") {
-      // try again lkater for more
+      // try again later for more
       window.setTimeout(() => {
         this._handleStep(pWheelKeyListAllSimpleData);
       }, 100);
@@ -303,7 +300,7 @@ export class NodegroupsPanel extends Panel {
     tr.style.borderTop = "4px double #ddd";
 
     const menuTd = Utils.createTd();
-    tr.dropdownmenu = new DropDownMenu(menuTd, true);
+    tr.dropdownmenu = new DropDownMenu(menuTd, "smaller");
     tr.appendChild(menuTd);
 
     const titleTd = Utils.createTd();
